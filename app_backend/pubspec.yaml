@@ -1,0 +1,28 @@
+name: app_backend
+
+#define qual versão do dart voçê vai utilizar neste projeto
+environment:
+  sdk: ">=2.10.0 <3.0.0"
+
+
+dependencies:
+  angel_framework: ^2.1.1 # framework dart de backend semelhante ao framework laravel de PHP
+  angel_cors: ^2.0.0 # Cross-Origin Resource Sharing ou CORS é um mecanismo que permite que recursos restritos em uma página da web sejam recuperados por outro domínio fora do domínio ao qual pertence o recurso que será recuperado
+  angel_configuration: ^2.2.0 # Loads application configuration, along with support for .env files.
+  angel_production: ^1.0.0 # Production application runner.
+  angel_static: ^2.1.3+2 # Static file server
+  fluent_query_builder: ^1.1.13 #esta lib foi eu que criei ela é utilizada para acessar banco de dados Postgre
+
+#esta sobre escrita de dependencias é para resolver um bug no driver postgres 
+#que impede o mesmo de funcionar com dart 2.8.4 e um bug com form data 
+#com dados UTF8(caracteres com acento)
+dependency_overrides:
+  postgres: ^2.1.1
+  http_server:
+    git:
+      url: https://github.com/dart-lang/http_server.git
+      ref: df31d20
+    
+dev_dependencies:
+  angel_hot:  # Hot-reloading support. :) ^2.0.6  
+  build_runner: ^1.10.0 

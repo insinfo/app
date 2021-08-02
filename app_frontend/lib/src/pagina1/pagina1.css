@@ -1,0 +1,11 @@
+.page{
+    width: 100vw;
+    height: 100vh;
+    background: rgb(96, 151, 187);
+    display: block;
+}
+
+h1{
+    text-align: center;
+    width: 100%;
+}

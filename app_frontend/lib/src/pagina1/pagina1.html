@@ -1,0 +1,10 @@
+<div class="page">
+    <h1>Formulario para cadastro de pessoa</h1>
+    <form (submit)="salvar()">
+        <!-- [(ngModel)]="pessoa.nome" isso é usado para vincular este input a variavel nome dentro da class pessoa-->
+        <input type="text" name="Nome" [(ngModel)]="pessoa.nome">
+        <input type="text" name="Telefone" [(ngModel)]="pessoa.telefone">
+        <button type="submit">Salvar</button>
+    </form>
+</div>
+
